@@ -1,0 +1,121 @@
+From 33a6aee5a97d28f860da105c749cab80af95ed1c Mon Sep 17 00:00:00 2001
+From: MariamY <myekini75@gmail.com>
+Date: Sun, 9 Aug 2020 12:39:19 -0400
+Subject: [PATCH] Create Patch File
+
+---
+ 0001-Changes-updated.patch | 44 ---------------------------------
+ Task3.patch                | 50 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 50 insertions(+), 44 deletions(-)
+ delete mode 100644 0001-Changes-updated.patch
+ create mode 100644 Task3.patch
+
+diff --git a/0001-Changes-updated.patch b/0001-Changes-updated.patch
+deleted file mode 100644
+index 172b5c5..0000000
+--- a/0001-Changes-updated.patch
++++ /dev/null
+@@ -1,44 +0,0 @@
+-From e3c0d25773561bd2d7711aad9aecaa3b5df8170a Mon Sep 17 00:00:00 2001
+-From: MariamY <myekini75@gmail.com>
+-Date: Sun, 9 Aug 2020 12:25:36 -0400
+-Subject: [PATCH] Changes updated
+-
+----
+- src/DataManipulator.ts | 7 ++++++-
+- 1 file changed, 6 insertions(+), 1 deletion(-)
+-
+-diff --git a/src/DataManipulator.ts b/src/DataManipulator.ts
+-index 5390a38..da1b280 100644
+---- a/src/DataManipulator.ts
+-+++ b/src/DataManipulator.ts
+-@@ -1,6 +1,7 @@
+- import { ServerRespond } from './DataStreamer';
+- 
+- export interface Row {
+-+  //added fields
+-   price_abc: number,
+-   price_def: number,
+-   ratio: number,
+-@@ -12,14 +13,18 @@ export interface Row {
+- 
+- 
+- export class DataManipulator {
+-+  //had to change serverResponds to serverRespond, there was a typo
+-+  //made changes to this method
+-   static generateRow(serverRespond: ServerRespond[]): Row[] {
+-     const priceABC = (serverRespond[0].top_ask.price + serverRespond[0].top_bid.price) / 2;
+-     const priceDEF = (serverRespond[1].top_ask.price + serverRespond[1].top_bid.price) / 2;
+-     const ratio = priceABC / priceDEF;
+-     const upperBound = 1 + 0.05;
+-     const lowerBound = 1 - 0.05;
+--    //return serverResponds.map((el: any) => {
+-+    
+-     return {
+-+      //not sure what the error here means
+-+      //made changes to this method
+-       price_abc: priceABC,
+-       price_def: priceDEF,
+-       ratio,
+--- 
+-2.24.3 (Apple Git-128)
+-
+diff --git a/Task3.patch b/Task3.patch
+new file mode 100644
+index 0000000..83f0dcd
+--- /dev/null
++++ b/Task3.patch
+@@ -0,0 +1,50 @@
++diff --git a/0001-Changes-updated.patch b/0001-Changes-updated.patch
++deleted file mode 100644
++index 172b5c5..0000000
++--- a/0001-Changes-updated.patch
+++++ /dev/null
++@@ -1,44 +0,0 @@
++-From e3c0d25773561bd2d7711aad9aecaa3b5df8170a Mon Sep 17 00:00:00 2001
++-From: MariamY <myekini75@gmail.com>
++-Date: Sun, 9 Aug 2020 12:25:36 -0400
++-Subject: [PATCH] Changes updated
++-
++----
++- src/DataManipulator.ts | 7 ++++++-
++- 1 file changed, 6 insertions(+), 1 deletion(-)
++-
++-diff --git a/src/DataManipulator.ts b/src/DataManipulator.ts
++-index 5390a38..da1b280 100644
++---- a/src/DataManipulator.ts
++-+++ b/src/DataManipulator.ts
++-@@ -1,6 +1,7 @@
++- import { ServerRespond } from './DataStreamer';
++- 
++- export interface Row {
++-+  //added fields
++-   price_abc: number,
++-   price_def: number,
++-   ratio: number,
++-@@ -12,14 +13,18 @@ export interface Row {
++- 
++- 
++- export class DataManipulator {
++-+  //had to change serverResponds to serverRespond, there was a typo
++-+  //made changes to this method
++-   static generateRow(serverRespond: ServerRespond[]): Row[] {
++-     const priceABC = (serverRespond[0].top_ask.price + serverRespond[0].top_bid.price) / 2;
++-     const priceDEF = (serverRespond[1].top_ask.price + serverRespond[1].top_bid.price) / 2;
++-     const ratio = priceABC / priceDEF;
++-     const upperBound = 1 + 0.05;
++-     const lowerBound = 1 - 0.05;
++--    //return serverResponds.map((el: any) => {
++-+    
++-     return {
++-+      //not sure what the error here means
++-+      //made changes to this method
++-       price_abc: priceABC,
++-       price_def: priceDEF,
++-       ratio,
++--- 
++-2.24.3 (Apple Git-128)
++-
+-- 
+2.24.3 (Apple Git-128)
+

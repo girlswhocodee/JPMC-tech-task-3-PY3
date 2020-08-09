@@ -3,7 +3,7 @@ import { Table } from '@jpmorganchase/perspective';
 import { ServerRespond } from './DataStreamer';
 import { DataManipulator } from './DataManipulator';
 import './Graph.css';
-
+//made all chanages as instructed
 interface IProps {
   data: ServerRespond[],
 }
@@ -24,6 +24,7 @@ class Graph extends Component<IProps, {}> {
     const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
 
     const schema = {
+      //included variables and their types
       price_abc: 'float',
       price_def: 'float',
       ratio: 'float',
@@ -37,7 +38,7 @@ class Graph extends Component<IProps, {}> {
       this.table = window.perspective.worker().table(schema);
     }
     if (this.table) {
-      // Load the `table` in the `<perspective-viewer>` DOM reference.
+      // Load the `table` based on added variables
       elem.load(this.table);
       elem.setAttribute('view', 'y_line');
       elem.setAttribute('row-pivots', '["timestamp"]');
